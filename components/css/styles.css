@@ -25,9 +25,9 @@ body {
 	margin-right: calc(-6000px + 100%);
 	background-color: #37474f;
 	-webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-    -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-    color: #f5f5f5;
+	-moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	color: #f5f5f5;
 	font-family: "Roboto";
 	font-size: 36px;
 	padding: 20px;
@@ -59,34 +59,43 @@ body {
 	background-color: #fcfcfc;
 	color: #4d4d4d;
 	border: 2px solid #acadad;
-	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+	font-family: Calibri, Arial, sans-serif;
 	font-size: 24px;
 	letter-spacing: .3px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 26.3999996185303px;
 	padding: 8px 20px;
+	margin: 2px;
 	outline: none;
 	cursor: pointer;
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	white-space: nowrap;
 	-webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
 	-moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
 	box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+	transition: all .3s ease-out;
 }
 .kde-breeze-button:focus {
 	background-color: #fcfcfc;
 	color: #535353;
 	border: 2px solid #1d99f3;
+	transition: all .3s ease-out;
 }
 .kde-breeze-button:active {
 	background-color: #1d99f3;
 	color: #eff0f1;
 	border: 2px solid #2689d1;
+	-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.2);
+	box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.2);
+	transition: all .3s ease-out;
 }
 div.kde-breeze-button {
 	display: inline;
+}
+.kde-breeze-button > i {
+	padding-right: 20px;
+	line-height: 18px;
+	color: #4d4d4d !important;
 }
