@@ -68,6 +68,14 @@ body {
 	line-height: 26.3999996185303px;
 	padding: 8px 20px;
 	outline: none;
+	cursor: pointer;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+	box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
 }
 .kde-breeze-button:focus {
 	background-color: #fcfcfc;
