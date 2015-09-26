@@ -1,0 +1,61 @@
+html, body {
+	height: 100%;
+}
+body {
+	overflow-y: auto;
+	scroll-snap-type: mandatory;
+	scroll-snap-points-y: repeat(100vh);
+	scroll-behavior: smooth;
+	margin: 0;
+	font-family: "Roboto";
+}
+.background {
+	background: url('/img/background.png') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 100%;
+	width: 100%;
+	height: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.logo-text {
+	font-size: 144px;
+	font-weight: 600;
+	color: #fafafa;
+	text-align: center;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+.logo-text > #logo-xor {
+	padding-right: 36px;
+}
+@media screen and (max-width: 800px) {
+	.logo-text {
+		font-size: 72px;
+	}
+}
+@media screen and (max-width: 575px) {
+	.logo-text {
+		-webkit-flex-direction: column;
+	}
+	.logo-text > #logo-xor {
+		font-size: 72px;
+		padding-right: 0;
+	}
+	.logo-text > #logo-projects {
+		font-size: 36px;
+		font-weight: 400;
+	}
+}
