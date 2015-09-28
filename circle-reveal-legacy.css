@@ -1,6 +1,13 @@
 .corbin, .evelyn {
-	max-height: 500px;
-	max-width: 500px;
+	height: 500px;
+	width: 500px;
+}
+.landscape {
+	width: 640px;
+	height: 360px; 
+}
+#color {
+	background-color: #212121;
 }
 
 /* Circle Reveal */
