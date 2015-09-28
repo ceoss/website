@@ -1,0 +1,24 @@
+.corbin, .evelyn {
+	max-height: 500px;
+	max-width: 500px;
+}
+
+/* Circle Reveal */
+.circle-reveal {
+	overflow: hidden;
+	position: relative;
+}
+.circle-reveal-content {
+	-webkit-clip-path: circle(0% at 50% 50%);
+	clip-path: circle(0% at 50% 50%);
+	transition: all .3s ease-out;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+.circle-reveal-content.circle-reveal-active {
+	-webkit-clip-path: circle(100% at 50% 50%);
+	clip-path: circle(100% at 50% 50%);
+} 
