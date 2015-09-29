@@ -6,6 +6,7 @@ body {
 	scroll-behavior: smooth;
 	margin: 0;
 	font-family: "Roboto";
+	-webkit-font-smoothing: antialiased;
 }
 
 /* Background */
@@ -26,7 +27,7 @@ body {
 
 /* Scroll */
 #scroll {
-	color: #fafafa;
+	color: #fff;
 	font-size: 64px;
 	position: absolute;
 	bottom: 32px;
@@ -39,7 +40,7 @@ body {
 .logo-text {
 	font-size: 144px;
 	font-weight: 600;
-	color: #fafafa;
+	color: #fff;
 	text-align: center;
 	height: 100vh;
 	display: -webkit-box;
@@ -85,7 +86,7 @@ body {
 		font-size: 72px;
 		padding-right: 0;
 	}
-	.logo-text > #logo-projects {
+	.logo-text > #logo-cards {
 		font-size: 36px;
 		font-weight: 400;
 	}
@@ -107,9 +108,40 @@ body {
 	}
 }
 .content-header {
-	color: #fafafa;
+	color: #fff;
 	font-size: 24px;
 	margin: 8px;
+}
+
+/* Cards */
+.card-image {
+	display: block;
+	position: relative;
+	max-width: 100%;
+}
+.card-text {
+	position: absolute;
+	bottom: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+	padding: 20px;
+	background-color: rgba(33,33,33,.75);
+	color: #fff;
+	font-size: 15px;
+}
+.card-text .light {
+	background-color: rgba(250,250,250,.75);
+	color: #212121;
+}
+.card-name {
+	font-size: 24px;
+	font-weight: 300;
+}
+.card-tagline {
+	padding-top: 6px;
 }
 
 /* Projects */
@@ -127,31 +159,6 @@ body {
 	   -moz-box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 	        box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
-.project-image {
-	display: block;
-	position: relative;
-	max-width: 100%;
-}
-.project-text {
-	position: absolute;
-	bottom: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-	padding: 8px;
-	background-color: rgba(33,33,33,.75);
-	color: #fafafa;
-}
-.project-text .light {
-	background-color: rgba(250,250,250,.75);
-	color: #212121;
-}
-.project-name {
-	font-size: 24px;
-	font-weight: 600;
-}
 @media screen and (max-width: 1300px) {
 	.project {
 		width: -webkit-calc(50% - 16px);
@@ -167,6 +174,7 @@ body {
 	}
 }
 
+
 /* Team */
 .team {
 	margin: 8px;
@@ -181,31 +189,6 @@ body {
 	-webkit-box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 	   -moz-box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 	        box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
-}
-.team-image {
-	display: block;
-	position: relative;
-	max-width: 100%;
-}
-.team-text {
-	position: absolute;
-	bottom: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-	padding: 8px;
-	background-color: rgba(33,33,33,.75);
-	color: #fafafa;
-}
-.team-text .light {
-	background-color: rgba(250,250,250,.75);
-	color: #212121;
-}
-.team-name {
-	font-size: 24px;
-	font-weight: 600;
 }
 @media screen and (max-width: 1300px) {
 	.team {
