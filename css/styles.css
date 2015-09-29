@@ -86,7 +86,7 @@ body {
 		font-size: 72px;
 		padding-right: 0;
 	}
-	.logo-text > #logo-cards {
+	.logo-text > #logo-projects {
 		font-size: 36px;
 		font-weight: 400;
 	}
@@ -162,6 +162,12 @@ body {
 	bottom: 0;
 	left: 0;
 	right: 0;
+	pointer-events: none;
+}
+.card.circle-reveal-content {
+	pointer-events: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
 }
 
 /* Projects */

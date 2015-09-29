@@ -17,6 +17,13 @@ function circleRevealIni () {
 			for (var i = ele.children.length - 1; i >= 0; i--) {
 				if (ele.children[i].classList.contains("circle-reveal-content")) {
 					ele.children[i].classList.add("circle-reveal-active");
+					// Link Cards
+					/* For mobile tapping support.
+					   May replace with onclick and ontap.
+					 */
+					ele.children[i].addEventListener("transitionend", function(event) {
+						event.target.style.pointerEvents = "auto";
+					}, false);
 					break;	
 				};
 			};
@@ -32,6 +39,13 @@ function circleRevealIni () {
 			for (var i = ele.children.length - 1; i >= 0; i--) {
 				if (ele.children[i].classList.contains("circle-reveal-content")) {
 					ele.children[i].classList.remove("circle-reveal-active");
+						// Link Cards
+						/* For mobile tapping support.
+						   May replace with onclick and ontap.
+						 */
+						ele.children[i].addEventListener("transitionend", function(event) {
+							event.target.style.pointerEvents = "none";
+						}, false);
 					break;	
 				};
 			};
