@@ -1,16 +1,7 @@
-.corbin, .evelyn {
-	height: 500px;
-	width: 500px;
-}
-.landscape {
-	width: 640px;
-	height: 360px; 
-}
-#color {
-	background-color: #212121;
-}
-
-/* Circle Reveal */
+/* Circle Reveal 
+   Author: XOR Projects
+   GitHub: https://github.com/xorprojects/Circle-Reveal-CSS
+   License: MIT */
 .circle-reveal {
 	overflow: hidden;
 	position: relative;

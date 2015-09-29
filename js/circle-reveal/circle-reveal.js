@@ -1,3 +1,7 @@
+/* Circle Reveal 
+   Author: XOR Projects
+   GitHub: https://github.com/xorprojects/Circle-Reveal-CSS
+   License: MIT */
 function circleRevealIni () {
 	var doc = document;
 	var elements = doc.getElementsByClassName('circle-reveal');
@@ -34,4 +38,7 @@ function circleRevealIni () {
 		}, false);
 	};
 }
-circleRevealIni();
+window.addEventListener("load", function load(event){
+	window.removeEventListener("load", load, false);
+	circleRevealIni();
+},false);

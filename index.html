@@ -2,24 +2,44 @@
 <html>
 <head>
 	<title>XOR Projects</title>
-	<link rel="icon" href="/img/favicon.ico">
 	<meta name="theme-color" content="#037ed3">
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
+
+
+	<!-- Icons -->
+	<link rel="icon" href="/img/favicon.ico">
+
+
+	<!-- Styles -->
+	<!-- Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="//cdn.materialdesignicons.com/1.2.65/css/materialdesignicons.min.css">
-	<link rel="stylesheet" href="/css/styles.css">
 
 	<!-- Circle Reveal -->
-	<!-- Firefox CSS -->
-	<link rel="stylesheet" type="text/css" href="/css/firefox.css">
+	<!-- Clip Path Supported Browsers -->
+	<link rel="stylesheet" type="text/css" href="/css/circle-reveal/circle-reveal.css">
+	<!-- Legacy Support -->
+	<link rel="stylesheet" href="/css/circle-reveal/circle-reveal-legacy.css">
 	<!--[if IE]>
-	<link rel="stylesheet" type="text/css" href="/css/internetexplorer.css">
+	<link rel="stylesheet" type="text/css" href="/css/circle-reveal/internetexplorer.css">
 	<![endif]-->
-	<!-- IE 10 -->
-	<link rel="stylesheet" type="text/css" href="/css/internetexplorer10.css">
-	<!-- Edge -->
-	<link rel="stylesheet" type="text/css" href="/css/edge.css">
+
+	<link rel="stylesheet" href="/css/styles.css">
+
+	<style type="text/css">
+		.corbin, .evelyn {
+			height: 500px;
+			width: 500px;
+		}
+		.landscape {
+			width: 640px;
+			height: 360px; 
+		}
+		#color {
+			background-color: #212121;
+		}
+	</style>
 </head>
 <body>
 	<!-- Bakcground -->
@@ -30,12 +50,12 @@
 	<div class="logo-text"><span id="logo-xor">XOR</span><span id="logo-projects">Projects</span></div>
 
 	<!-- Scroll -->
-	<span id="scroll"><i class="mdi mdi-chevron-down"></i></span>
+	<span class="dev" id="scroll"><i class="mdi mdi-chevron-down"></i></span>
 
 
 	<!-- Content Areas -->
 	<!-- Project Area -->
-	<div class="content" id="projects">
+	<div class="dev content" id="projects">
 		<!-- Header -->
 		<div class="content-header">Projects</div>
 
@@ -86,7 +106,7 @@
 	</div>
 
 	<!-- Team Area -->
-	<div class="content" id="team">
+	<div class="dev content" id="team">
 		<!-- <div class="content-spacing"></div> -->
 		<!-- Header -->
 		<div class="content-header">Team</div>
@@ -111,19 +131,35 @@
 	</div>
 
 	<!-- Social Area -->
-	<div class="content" id="social">
+	<div class="dev content" id="social">
 		
 	</div>
 
 	<!-- Footer -->
-	<div class="footer">
+	<div class="dev footer">
 		
+	</div>
+
+	<div class="dev landscape circle-reveal">
+		<div class="landscape" id="color"></div>
+		<div class="landscape circle-reveal-content">
+			<img class="landscape" src="/img/background.png">
+		</div>
 	</div>
 
 
 	<!-- Scripts -->
+	<!-- Hide Dev Elements -->
+	<script type="text/javascript">
+	if (document.URL == "http://xor.tech/") {
+		var dev = document.getElementsByClassName('dev');
+		for (var i = dev.length - 1; i >= 0; i--) {
+			dev[i].style.display = "none";
+		};
+	}
+	</script>
 	<!-- Circle Reveal -->
-	<script src="/circle-reveal.js"></script>
+	<script src="/js/circle-reveal/circle-reveal.js"></script>
 	<!-- Google Analytics -->
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
