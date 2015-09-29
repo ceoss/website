@@ -5,69 +5,49 @@
 /* CSS Hack for IE 10
    IE 10 will not support for clip-path: circle(); */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-	.circle-reveal {
-		overflow: hidden;
-		position: relative;
-	}
 	.circle-reveal-content {
-		border-radius: 50%;
+		-webkit-border-radius: 50%;
+		   -moz-border-radius: 50%;
+		        border-radius: 50%;
 		overflow: hidden;
 		opacity: 0;
-		transition: all .3s cubic-bezier(.2,0,.4,1);
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		left: 0;
 	}
 	.circle-reveal-content.circle-reveal-active {
-		border-radius: 0;
+		-webkit-border-radius: 0;
+		   -moz-border-radius: 0;
+		        border-radius: 0;
 		opacity: 1;
 	}
 }
 /* CSS Hack for Edge
    Remove when Edge adds support for clip-path: circle(); */
-@supports (-ms-accelerator:true) { 
-	.circle-reveal {
-		overflow: hidden;
-		position: relative;
-	}
+@supports (-ms-accelerator: true) { 
 	.circle-reveal-content {
-		border-radius: 50%;
+		-webkit-border-radius: 50%;
+		   -moz-border-radius: 50%;
+		        border-radius: 50%;
 		overflow: hidden;
 		opacity: 0;
-		transition: all .3s cubic-bezier(.2,0,.4,1);
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		left: 0;
 	}
 	.circle-reveal-content.circle-reveal-active {
-		border-radius: 0;
+		-webkit-border-radius: 0;
+		   -moz-border-radius: 0;
+		        border-radius: 0;
 		opacity: 1;
 	}
 }
 /* CSS Hack for Firefox
    Remove when Firefox adds support for clip-path: circle(); */
 @-moz-document url-prefix() {
-	.circle-reveal {
-		overflow: hidden;
-		position: relative;
-	}
 	.circle-reveal-content {
-		border-radius: 50%;
+		-moz-border-radius: 50%;
+		     border-radius: 50%;
 		overflow: hidden;
 		opacity: 0;
-		transition: all .3s cubic-bezier(.2,0,.4,1);
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		left: 0;
 	}
 	.circle-reveal-content.circle-reveal-active {
-		border-radius: 0;
+		-moz-border-radius: 0;
+		     border-radius: 0;
 		opacity: 1;
 	}
 }
