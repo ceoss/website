@@ -1,0 +1,83 @@
+body {
+	margin:0;
+}
+.container {
+	width: 50%;
+	margin: auto;
+}
+
+/* Cards */
+.card {
+	font-family: "Roboto";
+	color: rgba(0,0,0,.87);
+	background-color: #fff;
+	border-radius: 2px;
+	box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+}
+.card.card-dark {
+	color: rgb(255,255,255);
+	background-color: #212121;
+}
+.card div.card-img.\31 6-9 {
+	position: relative;
+	width: 100%;
+	padding-bottom: 56.25%;
+	float: left;
+	overflow: hidden;
+}
+.card div.card-img.\31 6-9 img.card-img {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.card .card-title-avatar-subtitle .card-title {
+	font-weight: 600;
+}
+.card .card-subtitle {
+	font-weight: 600;
+	color: rgba(0,0,0,.54);
+}
+.card .card-subtitle.card-subtitle-dark {
+	color: rgba(255,255,255,.70);
+}
+.card-avatar {
+	border-radius: 50%;
+	max-width: 40px;
+	max-height: 40px;
+	float: left;
+	margin-right: 16px;
+}
+.card .card-title-avatar-subtitle {
+	height: 72px;
+	padding: 16px;
+	box-sizing: border-box;
+	font-size: 14px;
+	line-height: 20px;
+}
+.card-text {
+	padding: 16px;
+	font-size: 14px;
+	display: inline-block;
+}
+.card .card-actions {
+	padding: 8px;
+}
+.card .card-actions .card-action {
+	margin-right: 8px;
+	min-width: 64px;
+	box-sizing: border-box;
+	height: 36px;
+	padding: 8px;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	cursor: pointer;
+	border-radius: 2px;
+	display: inline-block;
+	-webkit-tap-highlight-color: transparent;
+}
+.card .card-actions .card-action.card-action-last {
+	margin-right: 0 !important;
+}
