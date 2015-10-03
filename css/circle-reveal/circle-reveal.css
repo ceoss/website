@@ -5,8 +5,11 @@
 .circle-reveal {
 	overflow: hidden;
 	position: relative;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
 }
 .circle-reveal-content {
+	pointer-events: none;
 	-webkit-clip-path: circle(0% at 50% 50%);
 	clip-path: circle(0% at 50% 50%);
 	height: inherit;

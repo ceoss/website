@@ -166,11 +166,11 @@ body {
 	right: 0;
 	pointer-events: none;
 }
-.card.circle-reveal-content {
+/*.card.circle-reveal-content {
 	pointer-events: none;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-tap-highlight-color: transparent;
-}
+}*/
 
 /* Projects */
 .project {
