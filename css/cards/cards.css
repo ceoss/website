@@ -133,6 +133,6 @@ body {
 	text-align: right !important;
 }
 /* Remove Margin */
-.card .card-actions .card-action.card-action-last {
+.card .card-actions .card-action:last-of-type {
 	margin: 0 !important;
 }

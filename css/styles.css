@@ -146,8 +146,8 @@ body {
 	padding-top: 6px;
 }
 .card-border {
-	border-top: 2px solid rgba(255, 255, 255, 0.2);
-	border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+	border-top: 2px solid rgba(255,255,255,0.2);
+	border-bottom: 2px solid rgba(33,33,33,0.2);
 	height: -webkit-calc(100% - 4px);
 	height: -moz-calc(100% - 4px);
 	height: calc(100% - 4px);
@@ -165,6 +165,14 @@ body {
 	left: 0;
 	right: 0;
 	pointer-events: none;
+}
+.card-border.light {
+	border-top: 2px solid rgba(255,255,255,0.4);
+	border-bottom: 2px solid rgba(33,33,33,0.1);
+}
+.card-border.dark {
+	border-top: 2px solid rgba(255,255,255,0.1);
+	border-bottom: 2px solid rgba(33,33,33,0.4);
 }
 
 /* Projects */
