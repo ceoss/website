@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Unwanted Calls API</title>
+	<script src="./papaparse.min.js"></script>
+	<script type="text/javascript">
+		buffer = [];
+		window.addEventListener("load", function load(event){
+			window.removeEventListener("load", load, false);
+
+			// Parse Data into Objects
+			file = "./file.csv"
+			Papa.parse(file, {
+				download: true,
+				header: true,
+				complete: function(results) {
+					data = results.data;
+					console.log("Finished:", results.data);
+					if (buffer.length > 0) {
+						for (var i = buffer.length - 1; i >= 0; i--) {
+							alert(checkForPhone(buffer[i]));
+						};
+					};
+					delete buffer;
+				}
+			});
+
+			// Check for Params in URL
+			if (/\?/.test(document.URL)) {
+				params = decodeURI(document.URL).match(/\?phone=((\+1)?[\s-]*\(?(\d+)\)?[\s-]*(\d+)[\s-]*(\d+))/i);
+				var phone = params[1];
+
+				// document.getElementById('input').value = phone.replace(/(\+1)?[\s-]*\(?(\d+)\)?[\s-]*(\d+)[\s-]*(\d+)/, "$2-$3-$4");
+				checkForPhone(phone.replace(/(\+1)?[\s-]*\(?(\d+)\)?[\s-]*(\d+)[\s-]*(\d+)/, "$2-$3-$4"));
+			};
+		},false);
+		function checkForPhone(p) {
+			if (typeof data === "undefined") {
+				buffer.push(p);
+			} else {
+				var results = [];
+				for (var i = data.length - 1; i >= 0; i--) {
+					c = data[i]["Caller ID Number"];
+					a = data[i]["Advertiser Business Phone Number"];
+					if (c == p || a == p) {
+						results.push(i);
+					};
+				};
+				return results;
+			};
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>
