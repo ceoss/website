@@ -194,10 +194,17 @@ body {
 	}
 }
 
+/* Footer */
+#footer {
+	color: #fff;
+	text-align: center;
+	margin: 8px 10%;
+	padding: 16px 0; 
+	clear: both;
+}
 /* Social */
 #social {
 	font-size: 32px;
-	text-align: center;
 }
 #social > a {
 	color: #fff;
@@ -205,10 +212,4 @@ body {
 }
 #social i.mdi {
 	padding: 8px;
-}
-
-/* Footer */
-#footer {
-	color: #fff;
-	text-align: center;
 }
