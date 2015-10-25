@@ -2,38 +2,42 @@
 <html>
 <head>
 	<title>Unwanted Calls API</title>
+</head>
+<body>
+	<div class="card phone-input">
+		+1(<input type="text" name="area-code" id="area-code" oninput="input(event);">) <input type="text" name="first-digits" id="first-digits" oninput="input(event);"> - <input type="text" name="last-digits" id="last-digits" oninput="input(event);">
+	</div>
+
 	<script src="./papaparse.min.js"></script>
 	<script type="text/javascript">
 		buffer = [];
-		window.addEventListener("load", function load(event){
-			window.removeEventListener("load", load, false);
-
-			// Parse Data into Objects
-			file = "./file.csv"
-			Papa.parse(file, {
-				download: true,
-				header: true,
-				complete: function(results) {
-					data = results.data;
-					console.log("Finished:", results.data);
-					if (buffer.length > 0) {
-						for (var i = buffer.length - 1; i >= 0; i--) {
-							alert(checkForPhone(buffer[i]));
-						};
+		// Parse Data into Objects
+		file = "./data.csv";
+		Papa.parse(file, {
+			download: true,
+			header: true,
+			complete: function(results) {
+				data = results.data;
+				console.log("Finished:", results.data);
+				if (buffer.length > 0) {
+					for (var i = buffer.length - 1; i >= 0; i--) {
+						alert(checkForPhone(buffer[i]));
 					};
-					delete buffer;
-				}
-			});
+				};
+				delete buffer;
+			}
+		});
 
-			// Check for Params in URL
-			if (/\?/.test(document.URL)) {
-				params = decodeURI(document.URL).match(/\?phone=((\+1)?[\s-]*\(?(\d+)\)?[\s-]*(\d+)[\s-]*(\d+))/i);
-				var phone = params[1];
+		// Check for Params in URL
+		if (/\?/.test(document.URL)) {
+			params = decodeURI(document.URL).match(/\?phone=((\+1)?[\s-]*\(?(\d+)\)?[\s-]*(\d+)[\s-]*(\d+))/i);
+			var phone = params[1];
 
-				// document.getElementById('input').value = phone.replace(/(\+1)?[\s-]*\(?(\d+)\)?[\s-]*(\d+)[\s-]*(\d+)/, "$2-$3-$4");
-				checkForPhone(phone.replace(/(\+1)?[\s-]*\(?(\d+)\)?[\s-]*(\d+)[\s-]*(\d+)/, "$2-$3-$4"));
-			};
-		},false);
+			// document.getElementById('input').value = phone.replace(/(\+1)?[\s-]*\(?(\d+)\)?[\s-]*(\d+)[\s-]*(\d+)/, "$2-$3-$4");
+			checkForPhone(phone.replace(/(\+1)?[\s-]*\(?(\d+)\)?[\s-]*(\d+)[\s-]*(\d+)/, "$2-$3-$4"));
+		};
+
+		// Check for phone
 		function checkForPhone(p) {
 			if (typeof data === "undefined") {
 				buffer.push(p);
@@ -49,9 +53,21 @@
 				return results;
 			};
 		}
-	</script>
-</head>
-<body>
 
+		areaCodeEle = document.getElementById("area-code");
+		firstDigitsEle = document.getElementById("first-digits");
+		lastDigitsEle = document.getElementById("last-digits");
+		// Input
+		function input(event) {
+			console.log(event);
+			if (areaCodeEle.value.length == 3 && firstDigitsEle.value.length == 3 && lastDigitsEle.value.length == 4) {
+				alert(checkForPhone(areaCodeEle.value + "-" + firstDigitsEle.value + "-" + lastDigitsEle.value));
+			} else if (event.target.id == "area-code" && event.target.value.length == 3) {
+				firstDigitsEle.focus();
+			} else if (event.target.id == "first-digits" && event.target.value.length == 3) {
+				lastDigitsEle.focus();
+			}
+		}
+	</script>
 </body>
 </html>
