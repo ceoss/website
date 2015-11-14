@@ -10,7 +10,7 @@ body {
 .card, .results {
 	border-radius: 2px;
 	box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
-	min-width: 512px;
+	width: calc(100% - 16px);
 	max-width: 1800px;
 	margin: 8px auto;
 	background: #fff;
@@ -40,6 +40,14 @@ body {
 	border: none;
 	border-spacing: 0;
 }
+.table-header {
+	color: rgba(0,0,0,.54);
+	font-weight: 600;
+	font-size: 14px;
+}
+.table-container {
+	overflow-x: auto;
+}
 .table-item {
 	height: 48px;
 }
@@ -60,9 +68,4 @@ tr:first-of-type td {
 }
 td:last-of-type {
 	padding: 16px 24px 16px 0;
-}
-.truncate {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }

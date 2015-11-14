@@ -14,15 +14,6 @@
 	<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 	<link rel="stylesheet" href="//cdn.materialdesignicons.com/1.2.65/css/materialdesignicons.min.css">
 
-	<!-- Circle Reveal -->
-	<!-- Clip Path Supported Browsers -->
-	<!-- <link rel="stylesheet" type="text/css" href="/css/circle-reveal/circle-reveal.css"> -->
-	<!-- Legacy Support -->
-	<!-- <link rel="stylesheet" href="/css/circle-reveal/circle-reveal-legacy.css"> -->
-	<!--[if IE]>
-	<link rel="stylesheet" type="text/css" href="/css/circle-reveal/circle-reveal-legacy-only.css">
-	<![endif]-->
-
 	<link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -37,33 +28,36 @@
 	<div class="results">
 		<div class="card-title">Results</div>
 		<div class="card-subtitle">Your results for the phone number you entered will appear here. Note that the FCC complaint database is fairly new and as a result, small. 2,000 issues are added weekly.</div>
-		<table class="table" id="table">
-			<tr class="table-header">
-				<td data-tooltip="The type of unwanted call the consumer is complaining about.">Phone Issues:</td>
-				<td data-tooltip="The time that the consumer indicates the unwanted call occurred.">Time of Issue:</td>
-				<td data-tooltip="The telephone number the consumer indicates appeared on their caller ID.">Caller ID Number:</td>
-				<td data-tooltip="The telephone number the consumer indicates the advertiser provided during the call.">Advertiser Business Phone Number:</td>
-				<td data-tooltip="The type of unwanted robocall the consumer identified (abandoned, autodialed live voice, prerecorded voice, or text message).">Type of Call or Message (Robocalls):</td>
-				<td data-tooltip="The type of unwanted telemarketing call the consumer identified (abandoned, email, live voice, prerecorded voice, or text message).">Type of Call or Message (Telemarketing):</td>
-				<td data-tooltip="The state that the consumer that received the call is located in.">State:</td>
-				<td data-tooltip="The date the consumer states the indicated violation occurred.">Date (Ticket Date of Issue):</td>
-				<td data-tooltip="The date the complaint was submitted to the FCC.">Date (Ticket Created):</td>
-			</tr>
-			<tr class="table-item" id="no-data">
-				<td>No Data.</td>
-				<td></td> 
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
-		<!-- <ul class="list">
-			<li class="list-item" id="empty-list">Enter a phone number.</li>
-		</ul> -->
+		<div class="table-container">
+			<table class="table" id="table">
+				<thead>
+					<tr class="table-header">
+						<td title="The type of unwanted call the consumer is complaining about.">Phone Issues</td>
+						<td title="The time that the consumer indicates the unwanted call occurred.">Time of Issue</td>
+						<td title="The telephone number the consumer indicates appeared on their caller ID.">Caller ID Number</td>
+						<td title="The telephone number the consumer indicates the advertiser provided during the call.">Advertiser Business Phone Number</td>
+						<td title="The type of unwanted robocall the consumer identified (abandoned, autodialed live voice, prerecorded voice, or text message).">Type of Call or Message (Robocalls)</td>
+						<td title="The type of unwanted telemarketing call the consumer identified (abandoned, email, live voice, prerecorded voice, or text message).">Type of Call or Message (Telemarketing)</td>
+						<td title="The state that the consumer that received the call is located in.">State</td>
+						<td title="The date the consumer states the indicated violation occurred.">Date (Ticket Date of Issue)</td>
+						<td title="The date the complaint was submitted to the FCC.">Date (Ticket Created)</td>
+					</tr>
+				</thead>
+				<tbody id="table-body">
+					<tr class="table-item" id="no-data">
+						<td>No Data.</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 
 	<script src="./papaparse.min.js"></script>
@@ -120,18 +114,31 @@
 			};
 		}
 		function output(results) {
-			var noData = document.getElementById("no-data");
-			if (noData != null) {
-				noData.remove();
+			var tb = document.getElementById("table-body");
+			for (var i = tb.children.length - 1; i >= 0; i--) {
+				tb.removeChild(tb.children[i]);
 			};
-			var tb = document.getElementById("table");
-			for (var i = results.length - 1; i >= 0; i--) {
+			if (results.length > 0) {
+				for (var i = results.length - 1; i >= 0; i--) {
+					var tr = document.createElement("tr");
+					tr.classList.add("table-item");
+					for (var ik = 0; ik < Object.size(data[results[i]]); ik++) {
+						var k = Object.getOwnPropertyNames(data[results[i]])[ik];
+						var td = document.createElement("td");
+						td.innerHTML = data[results[i]][k];
+						tr.appendChild(td);
+					};
+					tb.appendChild(tr);
+				};
+			} else {
 				var tr = document.createElement("tr");
 				tr.classList.add("table-item");
-				for (var ik = 0; ik < Object.size(data[results[i]]); ik++) {
-					var k = Object.getOwnPropertyNames(data[results[i]])[ik];
+				tr.id = "no-data";
+				for (var ik = 0; ik < 9; ik++) {
 					var td = document.createElement("td");
-					td.innerHTML = data[results[i]][k];
+					if (ik == 0) {
+						td.innerHTML = "No Data.";
+					};
 					tr.appendChild(td);
 				};
 				tb.appendChild(tr);
@@ -143,7 +150,6 @@
 		lastDigitsEle = document.getElementById("last-digits");
 		// Input
 		function input(event) {
-			console.log(event);
 			if (areaCodeEle.value.length == 3 && firstDigitsEle.value.length == 3 && lastDigitsEle.value.length == 4) {
 				checkForPhone(areaCodeEle.value + "-" + firstDigitsEle.value + "-" + lastDigitsEle.value);
 			} else if (event.target.id == "area-code" && event.target.value.length == 3) {
