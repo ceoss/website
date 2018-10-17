@@ -1,0 +1,47 @@
+{
+  "name": "website",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://ceoss.io",
+  "bugs": {
+    "url": "https://github.com/ceoss/website/issues"
+  },
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Corbin Crutchley",
+      "email": "crutchcorn@gmail.com",
+      "url": "https://github.com/crutchcorn"
+    },
+    {
+      "name": "Evelyn Hathaway",
+      "email": "git@evelynhathaway.com",
+      "url": "https://evelynhathaway.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ceoss/website.git"
+  },
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.2.0",
+    "lodash": "^4.17.11",
+    "next": "^7.0.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "babel-plugin-import": "^1.9.1"
+  }
+}
